@@ -1,10 +1,12 @@
+import 'package:flame/components/component.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game/base_game.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.util.fullScreen();
+  await Flame.util.fullScreen();
+  await Flame.util.setLandscape();
   runApp(MyApp());
 }
 
@@ -39,6 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     game = BaseGame();
+    var dinoSprite = SpriteComponent.square(64, 'DinoSprites_tard.gif');
+    dinoSprite.x = 100;
+    dinoSprite.y = 100;
+    game.add(dinoSprite);
   }
 
   @override
