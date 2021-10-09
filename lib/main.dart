@@ -1,8 +1,10 @@
+import 'package:flame/flame.dart';
 import 'package:flame/game/base_game.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  var game = BaseGame();
+  WidgetsFlutterBinding.ensureInitialized();
+  Flame.util.fullScreen();
   runApp(MyApp());
 }
 
@@ -42,9 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: game.widget,
     );
   }
