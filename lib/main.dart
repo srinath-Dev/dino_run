@@ -1,6 +1,5 @@
-import 'package:flame/components/component.dart';
+import 'package:DinoWarrior/game/game.dart';
 import 'package:flame/flame.dart';
-import 'package:flame/game/base_game.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -30,21 +29,18 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late BaseGame game;
+  late DinoGame game;
 
   @override
   void initState() {
     super.initState();
-    game = BaseGame();
-    var dinoSprite = SpriteComponent.square(64, 'DinoSprites_tard.gif');
-    dinoSprite.x = 100;
-    dinoSprite.y = 100;
-    game.add(dinoSprite);
+    game = DinoGame();
   }
 
   @override
