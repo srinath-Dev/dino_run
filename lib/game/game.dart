@@ -1,4 +1,5 @@
 import 'package:DinoWarrior/game/dino.dart';
+import 'package:DinoWarrior/game/enemy.dart';
 import 'package:flame/components/parallax_component.dart';
 import 'package:flame/game.dart';
 import 'package:flame/gestures.dart';
@@ -25,6 +26,9 @@ class DinoGame extends BaseGame with TapDetector{
     add(_parallaxComponent);
     _dino = Dino();
     add(_dino);
+
+    var enemy = Enemy(EnemyType.Rino);
+    add(enemy);
   }
 
   @override

@@ -1,20 +1,18 @@
 import 'dart:ui';
 
+import 'package:DinoWarrior/game/constants.dart';
 import 'package:flame/animation.dart';
 import 'package:flame/components/animation_component.dart';
 import 'package:flame/spritesheet.dart';
 
-const double groundHeight = 32;
-const double dinoTopBottomSpacing = 10;
-const int numberOfTilesAlongWidth = 10;
-const double Gravity = 1000;
 
 class Dino extends AnimationComponent {
   late Animation _runAnimation;
   late Animation _hitAnimation;
-
   double speedY = 0.0;
   double yMax = 0.0;
+
+
 
   Dino() : super.empty() {
     final spriteSheet = SpriteSheet(
